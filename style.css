@@ -1,0 +1,101 @@
+:root {
+  --neon1: #00ffff;
+  --neon2: #ff00ff;
+  --bg: #050014;
+  --text: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at center, #0a0a2a, #000);
+  color: var(--text);
+  overflow: hidden;
+  user-select: none;
+}
+
+h1 {
+  text-align: center;
+  text-shadow: 0 0 20px var(--neon1);
+  margin: 20px 0;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#clickButton {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(45deg, var(--neon1), var(--neon2));
+  box-shadow: 0 0 40px var(--neon1), 0 0 60px var(--neon2);
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  animation: pulse 2s infinite, rainbow 5s linear infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes rainbow {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+#stats {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  text-shadow: 0 0 10px var(--neon2);
+}
+
+.shop {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: 12px;
+  padding: 10px;
+  width: 230px;
+  backdrop-filter: blur(8px);
+}
+
+.shop h2 {
+  text-align: center;
+  text-shadow: 0 0 10px var(--neon1);
+}
+
+.item {
+  margin: 6px 0;
+  background: rgba(255,255,255,0.1);
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.item:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.emoji {
+  position: absolute;
+  font-size: 28px;
+  pointer-events: none;
+  animation: float 1s ease-out forwards;
+}
+
+@keyframes float {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-150px) scale(1.5); }
+}
